@@ -6,7 +6,10 @@ import RegisterSitter from './RegisterSitter.jsx';
 function App() {
   return (
     <div className="app">
-      Hello World!
+      <BookSitter />
+      <RegisterSitter />
+      <Header />
+      <SitterList />
     </div>
   );
 }
