@@ -152,6 +152,10 @@ select:hover {
   width: 250px;
 }
 
+.register-sitter__upload-photo:hover {
+  cursor: pointer;
+}
+
 .register-sitter__pfp {
   width: 200px;
   height: 200px;

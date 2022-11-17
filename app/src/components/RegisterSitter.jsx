@@ -4,7 +4,7 @@ const RegisterSitter = ({ displayStatus, setDisplayStatus }) => {
   const [ name, setName ] = useState('');
   const [ loc, setLoc ] = useState('');
   const [ abt, setAbt ] = useState('');
-  const [ rate, setRate ] = useState(0);
+  const [ rate, setRate ] = useState('');
   const [ pfp, setPfp ] = useState('http://res.cloudinary.com/dcwyyjadj/image/upload/v1668705469/rl5eid17vf4g0qwtdvl6.jpg');
 
   // eslint-disable-next-line no-undef
@@ -41,14 +41,13 @@ const RegisterSitter = ({ displayStatus, setDisplayStatus }) => {
   const closeForm = () => {
     setName('');
     setLoc('');
-    setRate(0);
+    setRate('');
     setAbt('');
     setPfp('http://res.cloudinary.com/dcwyyjadj/image/upload/v1668705469/rl5eid17vf4g0qwtdvl6.jpg');
     setDisplayStatus('hidden');
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     const result = {
       name, loc, abt, rate, pfp
     }
@@ -60,7 +59,7 @@ const RegisterSitter = ({ displayStatus, setDisplayStatus }) => {
     <div className={`register-sitter ${displayStatus}`}>
       <i className="fa-solid fa-xmark register-sitter__close" onClick={closeForm} />
       <h3 className="register-sitter__header">Start Pet Sitting!</h3>
-      <form className="register-sitter__form" onSubmit={handleSubmit}>
+      <form className="register-sitter__form">
         <label>
           Name:
           <input className="register-sitter__input" type="text" value={name} onChange={handleNameChange} placeholder="My name is..." required />
@@ -85,13 +84,13 @@ const RegisterSitter = ({ displayStatus, setDisplayStatus }) => {
 
         <label>
           Picture:
-          <button className="register-sitter__upload-photo register-sitter__input" onClick={handleUploadPhoto}>
+          <span className="register-sitter__upload-photo register-sitter__input" onClick={handleUploadPhoto}>
             Choose a profile picture
-          </button>
+          </span>
         </label>
         <img className="register-sitter__pfp" src={pfp} alt="" />
 
-        <button className="register-sitter__submit" type="submit">
+        <button className="register-sitter__submit" type="button" onClick={handleSubmit}>
           Register
         </button>
       </form>
