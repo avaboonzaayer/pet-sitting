@@ -5,7 +5,9 @@
 
 body,
 button,
-select {
+select,
+input,
+textarea {
   font-family: 'Dosis', sans-serif;
   outline: none;
 }
@@ -13,6 +15,10 @@ select {
 button:hover,
 select:hover {
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Header */
@@ -26,6 +32,7 @@ select:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
 }
 
 .header__title {
@@ -63,5 +70,108 @@ select:hover {
 .header__sign-up:hover {
   background-color: #118646;
   border-color: #d4d4d4;
+  color: #d4d4d4;
+}
+
+/* Register Sitter */
+
+.register-sitter {
+  position: fixed;
+  z-index: 1;
+  overflow: auto;
+  top: 25%;
+  left: 33%;
+  width: 33%;
+  height: 50%;
+  background-color: #fff;
+  border: 3px solid #20b362;
+  border-radius: 15px;
+  padding: 25px;
+  font-size: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.register-sitter::-webkit-scrollbar {
+  display: none;
+}
+
+.register-sitter__close {
+  float: right;
+}
+
+.register-sitter__close:hover {
+  cursor: pointer;
+}
+
+.register-sitter__input {
+  display: block;
+  border: none;
+  border-bottom: 2px solid #20b362;
+  border-right: 2px solid #20b362;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: #A3EBB1;
+  padding: 5px;
+  color: #747474;
+}
+
+.register-sitter__input--rates {
+  position: relative;
+  top: -27px;
+  padding-left: 15px;
+  width: 85px;
+}
+
+.register-sitter__rate-container {
+  height: 55px;
+}
+
+.register-sitter__rate-container::before,
+.register-sitter__rate-container::after {
+  color:#747474;
+  position: relative;
+  z-index: 1;
+}
+
+.register-sitter__rate-container::before {
+  content: '$';
+  top: 3px;
+  left: 5px;
+}
+
+.register-sitter__rate-container::after {
+  content: '/day';
+  top: -75px;
+  left: 45px;
+}
+
+.register-sitter__upload-photo {
+  width: 250px;
+}
+
+.register-sitter__pfp {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #20b362;
+}
+
+.register-sitter__submit {
+  display: block;
+  border: none;
+  background-color: #20b362;
+  color: #fff;
+  width: 75px;
+  height: 35px;
+  font-size: 20px;
+  border-radius: 5px;;
+}
+
+.register-sitter__submit:hover {
+  background-color: #118646;
   color: #d4d4d4;
 }

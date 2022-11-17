@@ -1,4 +1,4 @@
-const Header = () => {
+const Header = ({ showForm }) => {
   return (
     <div className="header">
       <h1 className="header__title">
@@ -21,7 +21,7 @@ const Header = () => {
           </select>
         </label>
 
-        <button className="header__sign-up">
+        <button className="header__sign-up" onClick={showForm}>
           Sign Up
         </button>
       </div>
