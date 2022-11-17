@@ -6,6 +6,7 @@ import RegisterSitter from './RegisterSitter.jsx';
 
 function App() {
   const [ registerFormDisplayStatus, setRegisterFormDisplayStatus ] = useState('hidden');
+  const [ sitters, setSitters ] = useState([]);
 
   const showRegisterForm = () => {
     setRegisterFormDisplayStatus('shown');
@@ -16,7 +17,7 @@ function App() {
       <BookSitter />
       <RegisterSitter displayStatus={registerFormDisplayStatus} setDisplayStatus={setRegisterFormDisplayStatus} />
       <Header showForm={showRegisterForm} setDisplayStatus={setRegisterFormDisplayStatus} />
-      <SitterList />
+      <SitterList sitters={sitters} />
     </div>
   );
 }
