@@ -49,7 +49,7 @@ const RegisterSitter = ({ displayStatus, setDisplayStatus }) => {
 
   const handleSubmit = () => {
     const result = {
-      name, loc, abt, rate, pfp, reviews: []
+      name, loc, abt, rate, pfp, reviews: [], requests: []
     }
     console.log(result);
     closeForm();
