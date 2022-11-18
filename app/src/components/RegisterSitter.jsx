@@ -59,7 +59,7 @@ const RegisterSitter = ({ showRegister, setShowRegister, show }) => {
     <div className="register-sitter" onClick={e => e.stopPropagation()}>
       <i className="fa-solid fa-xmark register-sitter__close" onClick={closeForm} />
       <h3 className="register-sitter__header">Start Pet Sitting!</h3>
-      <form className="register-sitter__form">
+      <form className="register-sitter__form" onSubmit={handleSubmit}>
         <label>
           Name:
           <input className="register-sitter__input" type="text" value={name} onChange={handleNameChange} placeholder="My name is..." required />
@@ -90,7 +90,7 @@ const RegisterSitter = ({ showRegister, setShowRegister, show }) => {
         </label>
         <img className="register-sitter__pfp" src={pfp} alt="" />
 
-        <button className="register-sitter__submit" type="button" onClick={handleSubmit}>
+        <button className="register-sitter__submit" type="submit">
           Register
         </button>
       </form>
