@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const RegisterSitter = ({ displayStatus, setDisplayStatus }) => {
+const RegisterSitter = ({ showRegister, setShowRegister, show }) => {
   const [ name, setName ] = useState('');
   const [ loc, setLoc ] = useState('');
   const [ abt, setAbt ] = useState('');
@@ -44,7 +44,7 @@ const RegisterSitter = ({ displayStatus, setDisplayStatus }) => {
     setRate('');
     setAbt('');
     setPfp('http://res.cloudinary.com/dcwyyjadj/image/upload/v1668705469/rl5eid17vf4g0qwtdvl6.jpg');
-    setDisplayStatus('hidden');
+    setShowRegister(false);
   }
 
   const handleSubmit = () => {
@@ -55,8 +55,8 @@ const RegisterSitter = ({ displayStatus, setDisplayStatus }) => {
     closeForm();
   }
 
-  return (
-    <div className={`register-sitter ${displayStatus}`}>
+  return show ? (
+    <div className="register-sitter" onClick={e => e.stopPropagation()}>
       <i className="fa-solid fa-xmark register-sitter__close" onClick={closeForm} />
       <h3 className="register-sitter__header">Start Pet Sitting!</h3>
       <form className="register-sitter__form">
@@ -95,7 +95,7 @@ const RegisterSitter = ({ displayStatus, setDisplayStatus }) => {
         </button>
       </form>
     </div>
-  )
+  ) : null;
 }
 
 export default RegisterSitter;

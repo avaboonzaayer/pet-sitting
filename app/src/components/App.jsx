@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import Header from './Header.jsx';
 import SitterList from './SitterList.jsx';
-import BookSitter from './BookSitter.jsx';
 import RegisterSitter from './RegisterSitter.jsx';
 
 function App() {
-  const [ registerFormDisplayStatus, setRegisterFormDisplayStatus ] = useState('hidden');
+  const [ showRegister, setShowRegister ] = useState(false);
+  const [ showBook, setShowBook ] = useState(false);
   const [ sitters, setSitters ] = useState([{
     name: 'Sam Boonzaayer',
     loc: 'Peoria, AZ',
@@ -16,16 +16,28 @@ function App() {
     requests: []
   }]);
 
-  const showRegisterForm = () => {
-    setRegisterFormDisplayStatus('shown');
+  const showRegisterForm = (e) => {
+    e.stopPropagation();
+    setShowBook(false);
+    setShowRegister(true);
+  }
+
+  const showBookForm = (e) => {
+    e.stopPropagation();
+    setShowBook(true);
+    setShowRegister(false);
+  }
+
+  const closeAllModals = () => {
+    setShowRegister(false);
+    setShowBook(false);
   }
 
   return (
-    <div className="app">
-      <BookSitter />
-      <RegisterSitter displayStatus={registerFormDisplayStatus} setDisplayStatus={setRegisterFormDisplayStatus} />
-      <Header showForm={showRegisterForm} setDisplayStatus={setRegisterFormDisplayStatus} />
-      <SitterList sitters={sitters} />
+    <div className="app" onClick={closeAllModals}>
+      <RegisterSitter showRegister={showRegister} setShowRegister={setShowRegister} show={showRegister} />
+      <Header showForm={showRegisterForm} />
+      <SitterList sitters={sitters} showBook={showBook} showBookForm={showBookForm} setShowBook={setShowBook} />
     </div>
   );
 }
