@@ -6,12 +6,20 @@ const Sitter = ({ sitter, showBook, showBookForm, setShowBook }) => {
     <div className="sitter">
       <BookSitter sitter={sitter} show={showBook} setShow={setShowBook} />
       <img className="sitter__pfp" src={sitter.pfp} alt={sitter.name} />
-      <h3 className="sitter__name">{sitter.name}</h3>
-      <h5 className="sitter__loc-and-rate">{`${sitter.loc} • $${sitter.rate}/day`}</h5>
+      <div>
+        <h3 className="sitter__name">{sitter.name}</h3>
+        <h5 className="sitter__loc-and-rate">{`${sitter.loc} • $${sitter.rate}/day`}</h5>
+      </div>
       <p className="sitter__abt">{sitter.abt}</p>
-      <button className="sitter__book" onClick={showBookForm}>
-        Book this sitter!
-      </button>
+      <div className="sitter__btns">
+        <button className="sitter__book" onClick={showBookForm}>
+          Book this sitter!
+        </button>
+
+        <button className="sitter__read-reviews">
+          {`Reviews (${sitter.rating})`}
+        </button>
+      </div>
     </div>
   )
 }

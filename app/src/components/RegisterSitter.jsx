@@ -49,7 +49,7 @@ const RegisterSitter = ({ showRegister, setShowRegister, show, addSitter }) => {
 
   const handleSubmit = () => {
     const result = {
-      name, loc, abt, rate, pfp, reviews: [], requests: []
+      name, loc, abt, rate, pfp
     }
     addSitter(result);
     closeForm();
@@ -72,7 +72,7 @@ const RegisterSitter = ({ showRegister, setShowRegister, show, addSitter }) => {
 
         <label>
           About yourself:
-          <textarea className="register-sitter__input" value={abt} onChange={handleAbtChange} placeholder="Tell us about yourself!" rows="4" required />
+          <textarea className="register-sitter__input" value={abt} onChange={handleAbtChange} placeholder="Tell us about yourself!" rows="4" max="200" required />
         </label>
 
         <label>

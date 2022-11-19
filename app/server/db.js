@@ -8,8 +8,7 @@ const sitterSchema = new Schema({
   abt: String,
   rate: Number,
   pfp: String,
-  requests: [ Object ],
-  reviews: [ Object ]
+  rating: { type: Number, default: 0 }
 })
 
 const requestSchema = new Schema({
@@ -21,10 +20,21 @@ const requestSchema = new Schema({
   msg: String
 })
 
+const reviewSchema = new Schema({
+  sitterId: String,
+  name: String,
+  recommend: Boolean,
+  summary: String,
+  body: String,
+  timeStamp: { type: Date, default: Date.now() }
+})
+
 const Sitter = model('Sitter', sitterSchema);
 const Request = model('Request', requestSchema);
+const Review = model('Review', reviewSchema);
 
 module.exports = {
   Sitter: Sitter,
-  Request: Request
+  Request: Request,
+  Review: Review
 }

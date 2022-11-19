@@ -34,5 +34,19 @@ module.exports = {
       if (err) res.send(err.message);
       else res.send(result);
     })
+  },
+
+  getReviews: (req, res) => {
+    db.Review.find(req.params, (err, result) => {
+      if (err) res.send(err.message);
+      else res.send(result);
+    })
+  },
+
+  addReview: (req, res) => {
+    db.Review.create(req.body, (err, result) => {
+      if (err) res.send(err.message);
+      else res.send(result);
+    })
   }
 }
