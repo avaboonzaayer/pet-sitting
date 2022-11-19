@@ -1,4 +1,8 @@
-const Header = ({ showForm }) => {
+const Header = ({ showForm, setSort }) => {
+  const handleSortBy = (e) => {
+    setSort(e.target.value);
+  }
+
   return (
     <div className="header">
       <h1 className="header__title">
@@ -8,11 +12,11 @@ const Header = ({ showForm }) => {
       <div className="header__right-btns">
         <label className="header__sort-by">
           Sort By:
-          <select className="header__sort-by__drop-down">
-            <option className="header__sort-by__drop-down-option">
+          <select className="header__sort-by__drop-down" onChange={handleSortBy}>
+            <option className="header__sort-by__drop-down-option" value="rating">
               Best Reviewed
             </option>
-            <option className="header__sort-by__drop-down-option">
+            <option className="header__sort-by__drop-down-option" value="rate">
               Lowest Rates
             </option>
           </select>

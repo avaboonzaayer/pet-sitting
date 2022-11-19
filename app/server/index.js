@@ -7,7 +7,7 @@ const PORT = 8080;
 
 app.use(bp.json());
 
-app.get('/sitters', controllers.getSitters);
+app.get('/sitters/:sort', controllers.getSitters);
 app.post('/sitters', controllers.addSitter);
 app.delete('/sitters/:_id/remove', controllers.removeSitter);
 app.get('/requests/:sitterId', controllers.getBookings);

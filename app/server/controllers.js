@@ -2,7 +2,7 @@ const db = require('./db');
 
 module.exports = {
   getSitters: (req, res) => {
-    db.Sitter.find({}, (err, result) => {
+    db.Sitter.find({}, null, { sort: req.params.sort }, (err, result) => {
       if (err) res.send(err.message);
       else res.send(result);
     })

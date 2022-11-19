@@ -8,9 +8,10 @@ function App() {
   const [ showRegister, setShowRegister ] = useState(false);
   const [ showBook, setShowBook ] = useState(false);
   const [ sitters, setSitters ] = useState([]);
+  const [ sort, setSort ] = useState('rating');
 
   const getSitters = () => {
-    axios.get('/sitters')
+    axios.get(`/sitters/${sort}`)
       .then((results) => {
         setSitters(results.data);
       })
@@ -21,7 +22,7 @@ function App() {
       .then(getSitters);
   }
 
-  useEffect(getSitters, []);
+  useEffect(getSitters, [ sort ]);
 
   const showRegisterForm = (e) => {
     e.stopPropagation();
@@ -43,7 +44,7 @@ function App() {
   return (
     <div className="app" onClick={closeAllModals}>
       <RegisterSitter showRegister={showRegister} setShowRegister={setShowRegister} show={showRegister} addSitter={addSitter} />
-      <Header showForm={showRegisterForm} />
+      <Header showForm={showRegisterForm} setSort={setSort} />
       <SitterList sitters={sitters} showBook={showBook} showBookForm={showBookForm} setShowBook={setShowBook} />
     </div>
   );
