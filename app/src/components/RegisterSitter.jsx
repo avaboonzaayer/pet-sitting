@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const RegisterSitter = ({ showRegister, setShowRegister, show }) => {
+const RegisterSitter = ({ showRegister, setShowRegister, show, addSitter }) => {
   const [ name, setName ] = useState('');
   const [ loc, setLoc ] = useState('');
   const [ abt, setAbt ] = useState('');
@@ -31,7 +31,7 @@ const RegisterSitter = ({ showRegister, setShowRegister, show }) => {
   }
 
   const handleRateChange = (event) => {
-    setRate(event.target.value);
+    setRate(parseInt(event.target.value));
   }
 
   const handleUploadPhoto = () => {
@@ -51,7 +51,7 @@ const RegisterSitter = ({ showRegister, setShowRegister, show }) => {
     const result = {
       name, loc, abt, rate, pfp, reviews: [], requests: []
     }
-    console.log(result);
+    addSitter(result);
     closeForm();
   }
 
