@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+html,
+body,
+.app {
+  height: 100%;
+  width: 100%;
+}
+
 body,
 button,
 select,
@@ -71,14 +78,15 @@ select:hover {
 /* Register Sitter */
 
 .register-sitter,
-.book-sitter {
+.book-sitter,
+.reviews {
   position: fixed;
   z-index: 1;
   overflow: auto;
   top: 25%;
   left: 33%;
   width: 33%;
-  height: 60%;
+  height: fit-content;
   background-color: #fff;
   border: 3px solid #20b362;
   border-radius: 15px;
@@ -94,12 +102,14 @@ select:hover {
 }
 
 .register-sitter__close,
-.book-sitter__close {
+.book-sitter__close,
+.review__close {
   float: right;
 }
 
 .register-sitter__close:hover,
-.book-sitter__close:hover {
+.book-sitter__close:hover,
+.review__close:hover {
   cursor: pointer;
 }
 
@@ -116,6 +126,13 @@ select:hover {
   background-color: #A3EBB1;
   padding: 5px;
   color: #747474;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.register-sitter__input::-webkit-scrollbar,
+.book-sitter__input::-webkit-scrollbar {
+  display: none;
 }
 
 .register-sitter__input--rates {
@@ -176,7 +193,8 @@ select:hover {
   border-radius: 5px;;
 }
 
-.register-sitter__submit:hover {
+.register-sitter__submit:hover,
+.book-sitter__submit:hover {
   background-color: #118646;
   color: #d4d4d4;
 }
@@ -235,6 +253,12 @@ select:hover {
   padding: 0 10px;
 }
 
+.sitter__book:hover,
+.sitter__read-reviews:hover {
+  background-color: #118646;
+  color: #d4d4d4;
+}
+
 /* Book Sitter */
 
 .book-sitter {
@@ -252,4 +276,45 @@ select:hover {
 
 .book-sitter__submit {
   width: 145px;
+}
+
+/* Reviews */
+
+.reviews {
+  max-height: 50%;
+}
+
+.reviews__empty {
+  text-align: center;
+}
+
+.reviews__add-review {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background-color: #20b362;
+  width: fit-content;
+  height: fit-content;
+  padding: 9px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.reviews__add-review:hover {
+  color: #d4d4d4;
+  background-color: #118646;
+}
+
+.review__user-timestamp {
+  font-size: 14px;
+}
+
+.review {
+  border: 2px solid #20b362;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 25px;
 }

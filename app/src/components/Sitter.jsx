@@ -1,6 +1,19 @@
 import BookSitter from './BookSitter.jsx';
 
-const Sitter = ({ sitter, showBook, showBookForm, setShowBook }) => {
+const Sitter = ({
+  sitter,
+  showBook,
+  showBookForm,
+  setShowBook,
+  setShowReviews,
+  getReviews
+}) => {
+
+  const openReviews = (e) => {
+    e.stopPropagation();
+    getReviews(sitter._id);
+    setShowReviews(true);
+  }
 
   return (
     <div className="sitter">
@@ -16,7 +29,7 @@ const Sitter = ({ sitter, showBook, showBookForm, setShowBook }) => {
           Book this sitter!
         </button>
 
-        <button className="sitter__read-reviews">
+        <button className="sitter__read-reviews" onClick={openReviews}>
           {`Reviews (${sitter.rating})`}
         </button>
       </div>

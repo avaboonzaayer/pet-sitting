@@ -14,7 +14,7 @@ const Header = ({ showForm, setSort }) => {
           Sort By:
           <select className="header__sort-by__drop-down" onChange={handleSortBy}>
             <option className="header__sort-by__drop-down-option" value="rating">
-              Best Reviewed
+              Most Reviewed
             </option>
             <option className="header__sort-by__drop-down-option" value="rate">
               Lowest Rates
