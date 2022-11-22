@@ -24,6 +24,10 @@ select:hover {
   cursor: pointer;
 }
 
+fieldset {
+  border: none;
+}
+
 /* Header */
 
 .header {
@@ -114,7 +118,8 @@ select:hover {
 }
 
 .register-sitter__input,
-.book-sitter__input {
+.book-sitter__input,
+.new-review__input {
   display: block;
   border: none;
   border-bottom: 2px solid #20b362;
@@ -241,7 +246,8 @@ select:hover {
 }
 
 .sitter__book,
-.sitter__read-reviews {
+.sitter__read-reviews,
+.new-review__submit {
   color: #fff;
   background-color: #20b362;
   border: none;
@@ -282,12 +288,17 @@ select:hover {
 
 .reviews {
   max-height: 50%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .reviews__empty {
   text-align: center;
 }
 
+.reviews::-webkit-scrollbar {
+  display: none;
+}
 .reviews__add-review {
   position: relative;
   left: 50%;
@@ -312,9 +323,43 @@ select:hover {
   font-size: 14px;
 }
 
-.review {
+.review,
+.new-review {
   border: 2px solid #20b362;
   border-radius: 10px;
   padding: 10px;
   margin-top: 25px;
+  -ms-overflow-style: none;
+}
+
+.new-review__input--radio-select {
+  display: block;
+}
+
+.new-review__input__radio-btn::after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+.new-review__input__radio-btn:checked::after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #20b362;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
 }

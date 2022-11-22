@@ -6,7 +6,8 @@ const SitterList = ({
   showBookForm,
   setShowBook,
   setShowReviews,
-  getReviews
+  getReviews,
+  getSitterInfo
 }) => {
   return (
     <div className="sitter-list">
@@ -19,6 +20,7 @@ const SitterList = ({
           setShowBook={setShowBook}
           setShowReviews={setShowReviews}
           getReviews={getReviews}
+          getSitterInfo={getSitterInfo}
         />
       ))}
     </div>

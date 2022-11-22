@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import Review from './Review.jsx';
 import NewReview from './NewReview.jsx';
 
-const Reviews = ( { show, setShow, reviews, id, showReviewForm, setShowReviewForm }) => {
-
-
+const Reviews = ( { show, setShow, reviews, id, showReviewForm, setShowReviewForm, postReview }) => {
   const closeReviews = () => {
     setShow(false);
     setShowReviewForm(false);
@@ -27,7 +24,7 @@ const Reviews = ( { show, setShow, reviews, id, showReviewForm, setShowReviewFor
   )
 
   const addReview = showReviewForm ? (
-    <NewReview id={id} />
+    <NewReview sitterId={id} postReview={postReview} setShow={setShowReviewForm} />
   ) : (
     <button className="reviews__add-review" onClick={openNewReview}>
       Add Review

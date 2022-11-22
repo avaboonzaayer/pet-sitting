@@ -8,7 +8,7 @@ const sitterSchema = new Schema({
   abt: String,
   rate: Number,
   pfp: String,
-  rating: { type: Number, default: 0 }
+  reviews: { type: Number, default: 0 }
 })
 
 const requestSchema = new Schema({

@@ -13,7 +13,7 @@ const Header = ({ showForm, setSort }) => {
         <label className="header__sort-by">
           Sort By:
           <select className="header__sort-by__drop-down" onChange={handleSortBy}>
-            <option className="header__sort-by__drop-down-option" value="rating">
+            <option className="header__sort-by__drop-down-option" value="reviews">
               Most Reviewed
             </option>
             <option className="header__sort-by__drop-down-option" value="rate">
