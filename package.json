@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/avaboonzaayer/pet-sitting.git"
+    "url": "git+https://github.com/samboonzaayer/pet-sitting.git"
   },
-  "author": "Avarice Boonzaayer",
+  "author": "Sam Boonzaayer",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/avaboonzaayer/pet-sitting/issues"
+    "url": "https://github.com/samboonzaayer/pet-sitting/issues"
   },
-  "homepage": "https://github.com/avaboonzaayer/pet-sitting#readme"
+  "homepage": "https://github.com/samboonzaayer/pet-sitting#readme"
 }
