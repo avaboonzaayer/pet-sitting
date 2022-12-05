@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samboonzaayer/pet-sitting.git"
+    "url": "git+https://github.com/samboonzaayer/watch-my-pet.git"
   },
   "author": "Sam Boonzaayer",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/samboonzaayer/pet-sitting/issues"
+    "url": "https://github.com/samboonzaayer/watch-my-pet/issues"
   },
-  "homepage": "https://github.com/samboonzaayer/pet-sitting#readme"
+  "homepage": "https://github.com/samboonzaayer/watch-my-pet#readme"
 }
